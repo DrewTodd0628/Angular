@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css";
+
+html {
+  margin-left: 20%;
+  margin-right: 20%;
+}
