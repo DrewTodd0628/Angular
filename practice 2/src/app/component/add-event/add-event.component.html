@@ -17,10 +17,8 @@
         placeholder="Title..."
         formControlName="title"
       />
-      <div class="err" *ngIf="submitted && formControls.title.errors">
-        <div class="text-danger" *ngIf="formControls.title.errors">
-          Must include a title.
-        </div>
+      <div class="text-danger" *ngIf="submitted && formControls.title.invalid">
+        Must include a title.
       </div>
     </div>
     <div class="form-group">
@@ -43,10 +41,8 @@
         placeholder="Start..."
         formControlName="start"
       />
-      <div class="err" *ngIf="submitted && formControls.start.errors">
-        <div class="text-danger" *ngIf="formControls.start.errors">
-          Must include a start time.
-        </div>
+      <div class="text-danger" *ngIf="submitted && formControls.start.invalid">
+        Must include a start time.
       </div>
     </div>
     <div class="form-group">
@@ -59,10 +55,8 @@
         placeholder="End..."
         formControlName="end"
       />
-      <div class="err" *ngIf="submitted && formControls.end.errors">
-        <div class="text-danger" *ngIf="formControls.end.errors">
-          Must include a end time.
-        </div>
+      <div class="text-danger" *ngIf="submitted && formControls.end.invalid">
+        Must include a end time.
       </div>
     </div>
 

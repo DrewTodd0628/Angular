@@ -12,23 +12,15 @@ import {
   styleUrls: ['./add-event.component.css'],
 })
 export class AddEventComponent implements OnInit {
-  eventForm = new FormGroup({
+  reactiveForm = new FormGroup({
     title: new FormControl('', [Validators.required]),
-    description: new FormControl(''),
-    start: new FormControl(''),
-    end: new FormControl(''),
+    start: new FormControl('', [Validators.required]),
+    end: new FormControl('', [Validators.required]),
   });
 
   submitted: boolean = false;
-  reactiveForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
-    this.reactiveForm = this.formBuilder.group({
-      title: new FormControl(null, [Validators.required]),
-      start: new FormControl(null, [Validators.required]),
-      end: new FormControl(null, [Validators.required]),
-    });
-  }
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {}
 
@@ -37,12 +29,15 @@ export class AddEventComponent implements OnInit {
 
     if (this.reactiveForm.valid) {
       console.log(info);
+      console.log('valid: ');
+      console.log(this.formControls.start.valid);
     } else {
-      console.log('Error');
+      console.log('valid: ');
+      console.log(this.formControls.start.valid);
     }
   }
 
   get formControls() {
-    return this.eventForm.controls;
+    return this.reactiveForm.controls;
   }
 }
